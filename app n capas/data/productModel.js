@@ -3,14 +3,17 @@ const path = require('path');
 
 const filePath = path.join(__dirname, 'productos.json');
 
-// Leer productos iniciales
+// Cargar o inicializar datos
 let productos = [];
-
 try {
   productos = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 } catch (err) {
-  console.error("Error leyendo productos.json, usando array vacío", err);
-  productos = [];
+  console.error("Error leyendo productos.json. Inicializando con array vacío.");
+  productos = [
+    { id: 1, nombre: "Libro de Node.js", precio: 29.99 },
+    { id: 2, nombre: "Teclado mecánico", precio: 89.99 }
+  ];
+  fs.writeFileSync(filePath, JSON.stringify(productos, null, 2));
 }
 
 function saveToFile() {
