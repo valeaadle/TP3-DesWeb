@@ -1,0 +1,4 @@
+[
+    { "id": 1, "nombre": "Libro de Node.js", "precio": 29.99 },
+    { "id": 2, "nombre": "Teclado mecánico", "precio": 89.99 }
+  ]

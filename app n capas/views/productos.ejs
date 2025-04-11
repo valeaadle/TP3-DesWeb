@@ -1,0 +1,22 @@
+<script>
+  // Sincroniza Local Storage con el backend al cargar
+  fetch('/api/productos')
+    .then(res => res.json())
+    .then(products => {
+      localStorage.setItem('productos', JSON.stringify(products));
+      renderProducts();
+    });
+
+  // Cuando el usuario agrega un producto:
+  function addProduct() {
+    fetch('/api/productos', {
+      method: 'POST',
+      body: JSON.stringify(producto),
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then(() => {
+      // Actualiza Local Storage después de guardar en el backend
+      localStorage.setItem('productos', JSON.stringify([...products, producto]));
+    });
+  }
+</script>
