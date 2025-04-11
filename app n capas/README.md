@@ -1,5 +1,5 @@
 
-## Identificación de Capas en el código
+## Identificación de capas en el código
 
 1. **Capa de Presentación** (`/presentation`):
    - `productRoutes.js`: Define las rutas HTTP y comunica con la capa de negocio.
@@ -60,9 +60,3 @@
      - API REST
      - GraphQL
      - Aplicación móvil (si se expone como servicio)
-
-## Cómo ejecutar
-
-1. Instalar dependencias:
-   ```bash
-   npm install
